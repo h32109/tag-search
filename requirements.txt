@@ -1,0 +1,9 @@
+fastapi==0.112.2
+uvicorn==0.30.6
+pydantic==2.8.2
+pydantic-settings==2.4.0
+sqlalchemy[asyncio]==2.0.32
+werkzeug==3.0.4
+motor==3.5.1
+asyncmy==0.2.9
+pandas==2.2.2

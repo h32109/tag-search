@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  app:
+    build: tag-search:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - PROFILE=prod
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'search'
+      MYSQL_USER: 'search'
+      MYSQL_PASSWORD: '1234'
+      MYSQL_ROOT_PASSWORD: '1234'
+    command: mysqld
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
