@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "05a6c03e-b7d1-4ce9-bf2c-8e023a73edab",
+		"name": "Wanted",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11178449"
+	},
+	"item": [
+		{
+			"name": "\bsearch",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-wanted-language",
+						"value": "ko",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/search?query=링크",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "링크"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get company by name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-wanted-language",
+						"value": "ko",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/companies/\b없는회사",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies",
+						"\b없는회사"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get companies by tag",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-wanted-language",
+						"value": "ko",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/tags?query=タグ_22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tags"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "タグ_22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create company",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-wanted-language",
+						"value": "tw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"company_name\": {\n        \"ko\": \"라인 프레쉬\",\n        \"tw\": \"LINE FRESH\",\n        \"en\": \"LINE FRESH\"\n    },\n    \"tags\": [\n        {\n            \"tag_name\": {\n                \"ko\": \"태그_1\",\n                \"tw\": \"tag_1\",\n                \"en\": \"tag_1\"\n            }\n        },\n        {\n            \"tag_name\": {\n                \"ko\": \"태그_8\",\n                \"tw\": \"tag_8\",\n                \"en\": \"tag_8\"\n            }\n        },\n        {\n            \"tag_name\": {\n                \"ko\": \"태그_15\",\n                \"tw\": \"tag_15\",\n                \"en\": \"tag_15\"\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update company tag",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-wanted-language",
+						"value": "tw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"tag_name\": {\n            \"ko\": \"태그_50\",\n            \"jp\": \"タグ_50\",\n            \"en\": \"tag_50\"\n        }\n    },\n    {\n        \"tag_name\": {\n            \"ko\": \"태그_4\",\n            \"tw\": \"tag_4\",\n            \"en\": \"tag_4\"\n        }\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/companies/페르소나미디어/tags",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies",
+						"페르소나미디어",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "\bdelete company tag",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-wanted-language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/companies/페르소나미디어/tags/tag_13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies",
+						"페르소나미디어",
+						"tags",
+						"tag_13"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
