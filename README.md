@@ -23,9 +23,6 @@ pip install -r requirements.txt
 ```
 #### 환경 변수 설정:
 ```bash
-# 환경 변수 설정
-export PROFILE="prod"
-
 # DB 환경변수 설정
 tag_search/searcher/config/prod.env
 ...
