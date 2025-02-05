@@ -1,5 +1,5 @@
 
-# Tag_search
+# Tag search
 
 ## 목차
 1. [프로젝트 실행 방법](#프로젝트-실행-방법)
@@ -14,7 +14,7 @@
 #### 프로젝트 클론:
 ```bash
 # 해당 프로젝트를 클론합니다.
-git clone https://github.com/h32109/tag_search.git
+git clone https://github.com/h32109/tag-search.git
 ```
 #### 필요 라이브러리 설치:
 ```bash
